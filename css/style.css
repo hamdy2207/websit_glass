@@ -1,0 +1,248 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+.main {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    height: 100vh;
+    background: linear-gradient(to right top,#c9c9c9, #03a9f4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.glass {
+    width: 80%;
+    height: 90%;
+    border-radius: 10px;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.822) , #03a9f4);
+    box-shadow: 1px 1px 8px 2px #00000052;
+    display: flex;
+    justify-content: space-between;
+    z-index: 4;
+}
+.circle {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    transition: 0.6s;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 1), rgba(252, 250, 250, 0.1));
+}
+.one {
+    top: 30px;
+    right: 5px;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 1), rgba(252, 250, 250, 0.1));
+}
+.two {
+    width: 100px;
+    height: 100px;
+    bottom: 40%;
+    left: 10px;
+}
+.circle:hover {
+    animation-name: turn;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+h2, h1, p, span {
+    cursor: default;
+}
+.menu-side {
+    width: calc(100% / 3);
+    height: 100%;
+    background-color: white;
+    border-radius: 10px 0  0 10px;
+
+}
+.menu-side header img {
+    width: 80px;
+    height: 80px;
+    /* border-radius: 50%; */
+    margin: 10px 0 10px 50% ;
+    transform: translateX(-50%);
+    transition-property: transform;
+    /* transition-delay: 0.2s; */
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+
+}
+.menu-side header img:hover {
+    transform: translateX(-50%) scale(1.1);
+}
+.menu-side .name,
+.grade {
+    font-size: 15px;
+    text-align: center;
+    color: #225e89;
+}
+.grade {
+    font-size: 13px;
+    color: #589c90b9;
+}
+a {
+    text-decoration: none;
+    color: #225e89;
+    transition-duration: 0.3s;
+    transition-property: transform;
+    transition-timing-function: ease-in-out;
+}
+a:hover {
+    transform: translateX(10px) scale(1.1);
+}
+footer {
+    background-color: #03a9f4;
+    color: white;
+    width: 80%;
+    height: 20%;
+    margin-left: 50%;
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row-reverse;
+    border-radius: 5px;
+    cursor: pointer;
+    transform: translateX(-50%);
+}
+footer:hover {
+    animation-name: scale;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+footer img {
+    width: 80px;
+    transform: translate(-8px, -10px);
+}
+footer p {
+    cursor: pointer;
+}
+.cards {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 40px;
+}
+.cards img {
+    width: 25px;
+    height: 25px;
+    margin: 15px 10px -7px 0;
+}
+.games-side {
+    width: calc(100% / 3 * 2);
+    margin: 30px 0 0 30px;
+}
+.games-side img {
+    height: 50px;
+    width: 50px;
+    margin-top: 5px;
+    
+}
+.cards-games {
+    background: linear-gradient(to right, #fff, #03a9f4 80%);
+    margin: 5px 10% 7px 0;
+    border-radius: 7px;
+    padding: 10px;
+    height: 80px;
+    display: grid;
+    grid-template-columns: 25% 1fr;
+    grid-template-rows: 20px 20px auto;
+    color: white;
+    box-shadow: -3px 3px 4px 0px #00000052;
+    cursor: pointer;
+    transition-timing-function: ease-in-out;
+    transition-duration: 0.4s;
+    transition-property: transform;
+}
+.cards-games:hover {
+    transform: translateX(10px);
+}
+.cards-games .version,
+.num {
+    font-size: 10px;
+    grid-column: 2;
+}
+.num {
+    color: #707070;
+}
+.per {
+    grid-column: 2;
+    background-color: white;
+    width: 70%;
+    height: 7px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+}
+.per::after {
+    content: '';
+    position: absolute;
+    background-color: rgb(1, 137, 155);
+    height: 7px;
+}
+.p84::after {
+    width: 84%;
+}
+.p63::after {
+    width: 63%;
+}
+.p92::after {
+    width: 92%;
+}
+.num {
+    margin-top: -5px;
+}
+.head-game h1 {
+    color: #ddd;
+}
+input[type="text"] {
+    padding: 3px 0 3px 12px;
+    border: none;
+    letter-spacing: 1.5px;
+    font-size: 12px;
+    font-weight: 300;
+    font-style: italic;
+    border-radius: 3px;
+    margin: 5px 0 ;
+}
+input[type="text"]:focus {
+    outline: none;
+}
+
+
+
+
+
+
+
+
+/*animations*/
+
+@keyframes turn {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes scale {
+    0% {
+        transform: translateX(-50%) scale(1);
+    }
+    50% {
+        transform: translateX(-50%) scale(1.05);
+    }
+    100% {
+        transform: translateX(-50%) scale(1);
+    }
+}
